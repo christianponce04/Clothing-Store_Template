@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clothing Store Template</title>
+</head>
+<style type="text/css">
+	body ,html{
+		margin: 0;
+		padding: 0;
+		font-family: sans-serif;
+		}
+	.main{
+		width: 100%;
+	}
+	/*----------Aside-------*/
+	ul ,ol{
+		list-style: none;
+		padding: 10px;
+		margin: 10px 0;
+		opacity: 0.60;
+	}
+	ul{
+		margin-bottom: 50px;
+	}
+	ol{
+		font-size: 16px;
+		margin-left: 20px;
+	}
+	li {
+		padding: 10px;
+	}
+	 ul li:hover{
+	 	background-color: grey;
+	 	cursor: pointer; 
+	}
+	.aside{
+		width: 25%;
+		overflow: auto;
+		height: 100%;
+		position: fixed;
+		
+	}
+	.aside h1{
+		margin-left: 85px;
+		padding: 10px;
+		font-size: 25px;
+		letter-spacing: 3px;
+	}
+	.aside-content{
+		margin-left: 70px;
+		font-weight: bold;
+		font-size: 18px;
+		padding: 10px;
+	}
+	.aside-content p{
+		margin-bottom:10px;
+		font-size: 14px;
+		padding: 5px;
+		margin-left: 10px;
+		font-weight: lighter;
+	}
+	.li{
+		background-color: lightgrey;
+		padding-left: 30px;
+		color:#000;
+	}
+	.jeans{
+		font-weight: bolder;
+		color: #000;
+
+	}
+	/*Content-------*/
+	button{
+		width: 141px;
+		height: 50px;
+		font-size: 19px;
+		padding: px 18px;
+		background-color: #000;
+		color: #fff;
+		border:none;
+	}
+	button:hover{
+		background-color: grey;
+		cursor: pointer;
+	}
+	.content{
+		max-width: 100%;
+		width: 74%;
+		float: right;
+		margin-bottom: 20px;		
+	}
+	.content-image {
+		margin-right: 80px;
+		position: relative;
+	}
+	.content-image img{
+		max-width: 100%;
+	}
+	h3{
+		font-size: 30px;
+		font-weight: lighter;
+	}
+	.arrivals{
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: #fff;
+		padding: 10px;
+		margin-left: 20px;
+	}
+	.arrivals h1{
+		font-size: 64px;
+		font-weight: lighter;
+	}
+	.arrivals h3{
+		font-size: 40px;
+		text-transform: uppercase;
+    	margin-bottom: 10px;
+	}
+	
+	.items{
+		max-width: 100%;
+
+		display: grid;
+		grid-template-columns: repeat(4 ,1fr);
+		margin-right: 80px;
+		gap:30px;
+		filter: grayscale(75%);
+	}
+	.items-images img{
+		max-width: 100%;
+		width: 100%;
+		column-gap: 100px;
+		height: 250px;
+	}
+	.items-images p{
+		margin-bottom: 5px;
+	}
+	p.cost{
+		padding: 0;
+		margin: 0;
+		font-weight: bolder;
+	}
+	.items-images h3{
+		position: absolute;
+		top: 0;
+		font-weight: lighter;
+		margin: 0;
+		font-size: 15px;
+		background-color: #000;
+		color: #fff;
+		padding: 5px 7px;
+	}
+	#image-hover{
+		position: relative;
+	}
+	#image-hover button:hover{
+		opacity: 1;
+	}
+	#image-hover .button{
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50% ,-50%);
+		padding: 0;
+		margin: 0;
+		font-size: 15px;
+		width: 80px;
+		height: 40px;
+		cursor: pointer;
+		opacity: 0;
+	}
+	.subscribe{
+		clear: both;
+		background-color: #000;
+		color: #fff;
+		padding: 20px;
+		width: 69%;
+		float: right;
+		margin-right: 50px;
+
+	}
+	.subscribe-content h1{
+		font-weight: lighter;
+	}
+	input{
+		max-width: 100%;
+		width: 99%;
+		height: 40px;
+		padding-left:10px;
+	}
+	.subscribe-content button{
+		margin-top: 16px;
+		background-color: tomato;
+		width: 99px;
+		height: 40px;
+		font-size: 16px;
+	}
+	.contact-us{
+		clear: both;
+		padding: 20px;
+		width: 69%;
+		float: right;
+		margin-right: 50px;
+		background-color: lightgrey;
+	}
+	.contact-content{
+		width: 100%;
+		display: flex;
+		margin-top: 60px;
+		text-align: center;
+	}
+	.contact-content input{
+		margin:5px 0;
+		height: 30px;
+		width: 96%;
+		border:1px solid grey;
+	}
+	.contact-content button{
+		width: 100%;
+		padding-left: 10px;
+		height: 35px;
+		font-size: 14px;	
+	}
+	form{
+		display: inline;
+		width: 35%;
+		margin-right: 50px;
+		text-align: center;
+	}
+	.about{
+		margin-right: 120px;
+		margin-left: 70px;
+	}
+	.about a{
+		display: block;
+		margin-top: 15px;
+		color: #000;
+		font-size: 13px;
+	}
+	.contact-content h3{
+		margin-bottom: 0;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.contact-content p{
+		font-size: 15px;
+	}
+	.store{
+		text-align: left;
+	}
+	.store p{
+		font-size: 13px;		
+	}
+	.footer{
+		clear: both;
+		width: 70%;
+		float: right;
+		margin-right: 50px;
+		background-color: #000;
+		color: #fff;
+		padding: 10px;
+		text-align: center;
+	}
+	a{
+		color: #fff;
+	}
+	.nav{
+		width: 100%;
+		background-color: #000;
+		min-height: 80px;
+		color: #fff;
+		position: fixed;
+		top: 0;
+		z-index: 2;
+		display: none;
+	}
+	.nav h1{
+		font-weight: lighter;
+		padding: 15px;
+		margin: 0;
+	}
+	@media (max-width: 1000px){
+		.nav{
+			display: block;
+		}
+		.aside{
+			display: none;
+		}
+		.container{
+			margin: 0 20px;
+		}
+		.content h3{
+			margin: 0px;
+			padding: 15px 10px;
+		}
+		.content{
+			margin-top: 80px;
+			float: none;
+			width: 100%;
+		}
+		.content-image{
+			width: 100%;
+		}
+		.items{
+			width: 100%;
+			grid-template-columns: repeat(2 , 1fr);
+		}
+		.items-images img{
+		height: auto;			
+		}
+		.subscribe{
+			float: none;
+			width: 100%;
+			padding: 10px 0;
+		}
+		.subscribe-content{
+			margin-left: 20px;
+ 		   margin-bottom: 10px;
+		}
+		input{
+			max-width: 95%;
+		}
+		.contact-us{
+			width: auto;
+			margin-right: 0;
+		}
+		.footer{			
+   			float: none;
+   			width: 100%;
+   			padding: 10px 0 ;		   		   
+		}
+	}
+</style>
+<body>
+	<div class="main">
+		<div class="nav">
+				<h1>LOGO</h1>
+			</div>
+		<div class="container">
+			<div class="aside">
+				<h1>LOGO</h1>
+				<div class="aside-content">
+					<ul>
+						<li>Shirt</li>
+						<li>Dresses</li>
+						<li class="jeans">Jeans</li>
+						<ol>
+							<li class="li">Skinny</li>
+							<li>Relaxed</li>
+							<li>Bootcut</li>
+							<li>Straight</li>
+						</ol>
+						<li>Jacketsssss</li>
+						<li>Gymwear</li>
+						<li>Blazers</li>
+						<li>Shoes</li>
+					</ul>
+					<p>Contact</p>
+					<p>Newsletter</p>
+					<p>Subscribe</p>
+				</div>	
+			</div>
+			<div class="content">
+			<h3>Jeans</h3>
+			<div class="content-image">
+				<img src="img/jeans.jpg" alt="jeans">
+				<div class="arrivals">
+					<h1>New arrivals</h1>
+					<h3>Collection 2016</h3>
+					<button>SHOP NOW</button>
+				</div>
+			</div>
+			<p>8 items</p>
+			<div class="items">
+				<div class="items-images">
+					<img src="img/jeans1.jpg">
+					<p>Ripped Skinny Jeans</p>
+					<p class="cost">$24.99</p>
+				</div>
+				<div class="items-images" id="image-hover">
+					<img src="img/jeans2.jpg">
+					<p>Ripped Skinny Jeans</p>
+					<p class="cost">$24.99</p>
+					<h3>New</h3>
+					<button class="button">Buy now</button>
+				</div>
+				<div class="items-images">
+					<img src="img/jeans3.jpg">
+					<p>Ripped Skinny Jeans</p>
+					<p class="cost">$24.99</p>
+				</div>
+				<div class="items-images">
+					<img src="img/jeans4.jpg">
+					<p>Ripped Skinny Jeans</p>
+					<p class="cost">$24.99</p>
+				</div>
+				<div class="items-images">
+					<img src="img/jeans2.jpg">
+					<p>Ripped Skinny Jeans</p>
+					<p class="cost">$24.99</p>
+				</div>
+				<div class="items-images" id="image-hover">
+					<img src="img/jeans3.jpg">
+					<p>Ripped Skinny Jeans</p>
+					<p class="cost">$24.99</p>
+				</div>
+				<div class="items-images" id="image-hover">
+					<img src="img/jeans4.jpg">
+					<p>Ripped Skinny Jeans</p>
+					<p class="cost">$24.99</p>
+					<h3>Sale</h3>
+					<button class="button">Buy now</button>
+				</div>
+				<div class="items-images">
+					<img src="img/jeans1.jpg">
+					<p>Ripped Skinny Jeans</p>
+					<p class="cost">$24.99</p>
+				</div>
+			</div>				
+			</div>
+		</div>
+		<div class="subscribe">
+				<div class="subscribe-content">
+					<h1>Subscribe</h1>
+					<p>To get special offers and VIP treatment:</p>
+					<input type="email" name="email" placeholder="Enter e-mail">
+					<button>Subscribe</button>
+				</div>
+			</div>
+			<div class="contact-us">
+					<div class="contact-content">
+						<form>
+						<h3>Contact</h3>
+						<p>Questions? Go ahead.</p>
+							<input type="text" name="name" placeholder="Name" required="required">
+							<input type="email" name="email" placeholder="email" required="required">
+							<input type="text" name="subject" placeholder="Subject" required="required">
+							<input type="text" name="message" placeholder="Message" required="required">
+							<button type="submit">Send</button>
+						</form>
+						<div class="about">
+							<h3>About</h3>
+							<a href="#">About us</a>
+							<a href="#">We're hiring</a>
+							<a href="#">Support</a>
+							<a href="#">Find store</a>
+							<a href="#">Shipment</a>
+							<a href="#">Payment</a>
+							<a href="#">Gift Card</a>
+							<a href="#">Return</a>
+							<a href="#">Help</a>
+					</div>
+					<div class="store">
+							<h3>Store</h3>
+							<p>Company Name</p>
+							<p>0044123123</p>
+							<p>ex@gmail.com</p>
+							<h3>We accept</h3>
+							<p>Amex</p>
+							<p>Credit Card</p>
+					</div>
+					</div>
+				</div>
+				<div class="footer">
+				 <p>Powered by <a href ="#">w3.css</a></p>			
+				</div>
+	</div>
+</body>
+</html>
